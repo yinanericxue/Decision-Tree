@@ -18,11 +18,12 @@ def createDataSet(): # 5 samples, 2 features, 1 categorical label
     return dataSet, labels
 
 def calcShannonEnt(dataSet):  # Calculate the entropy of a dataset based on the label value (the last column)
-
+    # length = 24
     numEntries = len(dataSet)
     labelCounts = {}
-    for featVec in dataSet: #the the number of unique elements and their occurance
-        currentLabel = featVec[-1]  # the last column - label value
+    for featVec in dataSet:
+        currentLabel = featVec[-1]
+        # checks how many unique 3rd values are there, and how many times each one existed
         if currentLabel not in labelCounts.keys():
             labelCounts[currentLabel] = 0
         labelCounts[currentLabel] += 1
@@ -44,8 +45,8 @@ def splitDataSet(dataSet, axis, value):
     return retDataSet
 
 def chooseBestFeatureToSplit(dataSet):
-
-    numFeatures = len(dataSet[0]) - 1      #the last column is used for the labels
+    # each sample is a list of 5, so numFeatures = 4
+    numFeatures = len(dataSet[0]) - 1
     baseEntropy = calcShannonEnt(dataSet)
     bestInfoGain = 0.0;
     bestFeature = -1
@@ -81,9 +82,11 @@ def majorityCnt(classList):
     # classification, voting and find the majority class
     # regression, calculate the mean
 
-
+# dataSet = 24 samples, each sample is a list of 5 values
+# labels = age, prescipt, astigmatic, tearRate
 def createTree(dataSet, labels): # feature names in the dataset
-
+    
+    # takes the 5th and final value of every sample 
     classList = [ example[-1] for example in dataSet ]
 
     if classList.count( classList[0] ) == len(classList): # all label values are the same in the dataset, for example: all "yes" or all "no"
