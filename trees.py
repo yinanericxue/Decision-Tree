@@ -52,9 +52,10 @@ def chooseBestFeatureToSplit(dataSet):
     bestFeature = -1
 
     for i in range(numFeatures):        #iterate over all the features
-
-        featList = [example[i] for example in dataSet]#create a list of all the examples of this feature
-        uniqueVals = set(featList)       #get a set of unique values
+        # create a list of 24 where each value is the ith feature of the ith dataset
+        featList = [example[i] for example in dataSet]
+        # check how many unique values are in the list above and put them in a new list
+        uniqueVals = set(featList)
         newEntropy = 0.0
 
         for value in uniqueVals:
