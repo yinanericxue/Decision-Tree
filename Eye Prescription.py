@@ -1,10 +1,7 @@
 import trees
 import treePlotter
 
-fr = open('lenses.txt')
-lenses = [ inst.strip().split('\t') for inst in fr.readlines() ]
-lensesLabels = ['age','prescript','astigmatic','tearRate']
-lensesTree = trees.createTree(lenses,lensesLabels)
-print(lensesTree)
-
-treePlotter.createPlot(lensesTree)
+lenses = [ inst.strip().split('\t') for values in open('lenses.txt').readlines() ]
+labels = ['age','prescript','astigmatic','tearRate']
+tree = trees.createTree(lenses,labels)
+treePlotter.createPlot(tree)
