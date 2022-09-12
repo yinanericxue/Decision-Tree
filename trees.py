@@ -19,8 +19,8 @@ def splitDataSet(dataset, i, value):
     retDataSet = []
     for sample in dataset:
         if sample[i] == value:
-            reducedFeatVec = featVec[:i]     #chop out axis used for splitting
-            reducedFeatVec.extend( featVec[i+1:] )   # The extend() method adds all the elements of an iterable (list, tuple, string etc.) to the end of the list.
+            reducedFeatVec = featVec[:i] 
+            reducedFeatVec.extend( featVec[i+1:] )
             retDataSet.append(reducedFeatVec)
     return retDataSet
 
