@@ -1,4 +1,4 @@
-# Decision-Tree
+# Decision Tree
 
 ## The decision tree is a supervised learning algorithm for classification or regression problems, and it can analyze nonlinear interactions between variables in a dataset. It looks very similar to a binary tree, and it's heavily revolved around recursion. Every leaf in tree should provide some essential information to determine the final solution. It's important not to overfit a tree by overcomplicating it and including any unnecessary leaves.
 
